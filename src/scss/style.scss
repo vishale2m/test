@@ -51,15 +51,7 @@ $base-color: #ff9100;
 }
 
 button {
-  @include colors.button(20px, colors.$lightBlue, colors.$black);
-  // @include colors.inline-animation(2s) {
-  //     from {
-  //         background-color: colors.$lightBlue;
-  //     }
-  //     to {
-  //         background-color: colors.$red;
-  //     }
-  // }
+  @include colors.button(20px, colors.$black, colors.$white);
 }
 
 @media (width < 767px) {
