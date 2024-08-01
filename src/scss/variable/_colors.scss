@@ -1,0 +1,59 @@
+$red: #ff0000;
+$lightBlue: #add8e7;
+$black: #333333;
+
+@mixin button($font-size: "20px", $bakground: $red, $color: $lightBlue) {
+  font-size: $font-size;
+  background: $bakground;
+  color: $color;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 0;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background: $color;
+    color: $bakground;
+  }
+}
+
+@mixin inline-animation($duration) {
+  $name: inline-#{unique-id()};
+
+  @keyframes #{$name} {
+    @content;
+  }
+
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-iteration-count: infinite;
+}
+
+@mixin custom-button {
+  @content;
+}
+
+@mixin boxSize ($width, $height){
+  @if($width != ''){
+    width: $width;
+  }@else{
+    width: $height;
+  }
+
+  @if($height != ''){
+    height: $height;
+  }@else{
+    height: $width;
+  }
+}
+
+$sizes: 40px, 50px, 80px;
+
+@each $size in $sizes {
+  .icon-#{$size} {
+    font-size: $size;
+    height: $size;
+    width: $size;
+  }
+}
